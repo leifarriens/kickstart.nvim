@@ -11,7 +11,14 @@ vim.keymap.set('n', '\\', '<Cmd>Neotree reveal<CR>', { desc = 'NeoTree reveal', 
 
 require('neo-tree').setup {
   filesystem = {
+    filtered_items = {
+      visible = true,
+      hide_dotfiles = false,
+    },
     window = {
+      -- Neo-tree measures width in terminal columns, not pixels.
+      -- 30 columns is approximately 200px in most terminals.
+      width = 30,
       mappings = {
         ['\\'] = 'close_window',
       },
